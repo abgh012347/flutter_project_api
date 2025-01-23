@@ -35,7 +35,7 @@ public class LocationInfoService {
 	
 	public List<LocationInfoDto> getLocationsByKeyword(String keyword) {
 		return locationInfoRepository
-				.findByPlaceNameContainingOrPlaceAddressContaining(keyword, keyword) // 동일한 키워드 사용
+				.findByPlaceAddressContaining(keyword) // 동일한 키워드 사용
 				.stream()
 				.map(this::convertToDto)
 				.collect(Collectors.toList());
