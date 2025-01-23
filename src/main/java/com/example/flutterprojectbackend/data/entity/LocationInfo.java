@@ -21,10 +21,6 @@ public class LocationInfo {
 	private Category category;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "resource_id", nullable = false)
-	private LanguageResource resource;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "language_id", nullable = false)
 	private Language language;
 	

@@ -45,7 +45,6 @@ public class LocationInfoService {
 		return LocationInfoDto.builder()
 				.id(locationInfo.getId())
 				.categoryId(locationInfo.getCategory() != null ? locationInfo.getCategory().getId() : null)
-				.resourceId(locationInfo.getResource() != null ? locationInfo.getResource().getId() : null)
 				.languageId(locationInfo.getLanguage() != null ? locationInfo.getLanguage().getId() : null)
 				.placeName(locationInfo.getPlaceName())
 				.placeDescription(locationInfo.getPlaceDescription())

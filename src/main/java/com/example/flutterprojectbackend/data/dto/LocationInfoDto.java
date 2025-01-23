@@ -8,7 +8,6 @@ import lombok.Data;
 public class LocationInfoDto {
 	private Integer id;
 	private Integer categoryId;
-	private Integer resourceId;
 	private Integer languageId;
 	private String placeName;
 	private String placeDescription;
