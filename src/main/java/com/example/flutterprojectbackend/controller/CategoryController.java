@@ -32,16 +32,4 @@ public class CategoryController {
 		List<CategoryDto> categories = categoryService.getCategoriesByLanguageId(languageId);
 		return ResponseEntity.ok(categories);
 	}
-	
-	@PostMapping
-	public ResponseEntity<CategoryDto> saveCategory(@RequestBody CategoryDto categoryDto) {
-		CategoryDto savedCategory = categoryService.saveCategory(categoryDto);
-		return ResponseEntity.ok(savedCategory);
-	}
-	
-	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> deleteCategory(@PathVariable Integer id) {
-		categoryService.deleteCategory(id);
-		return ResponseEntity.noContent().build();
-	}
 }

@@ -15,21 +15,15 @@ public class LanguageResourceController {
 	
 	private final LanguageResourceService languageResourceService;
 	
-	@GetMapping
-	public ResponseEntity<List<LanguageResourceDto>> getAllResources() {
-		List<LanguageResourceDto> resources = languageResourceService.getAllResources();
-		return ResponseEntity.ok(resources);
-	}
-	
 	@GetMapping("/language/{languageId}")
 	public ResponseEntity<List<LanguageResourceDto>> getResourcesByLanguageId(@PathVariable Integer languageId) {
 		List<LanguageResourceDto> resources = languageResourceService.getResourcesByLanguageId(languageId);
 		return ResponseEntity.ok(resources);
 	}
 	
-	@PostMapping
-	public ResponseEntity<LanguageResourceDto> saveResource(@RequestBody LanguageResourceDto resourceDto) {
-		LanguageResourceDto savedResource = languageResourceService.saveResource(resourceDto);
-		return ResponseEntity.ok(savedResource);
-	}
+//	@PostMapping
+//	public ResponseEntity<LanguageResourceDto> saveResource(@RequestBody LanguageResourceDto resourceDto) {
+//		LanguageResourceDto savedResource = languageResourceService.saveResource(resourceDto);
+//		return ResponseEntity.ok(savedResource);
+//	}
 }

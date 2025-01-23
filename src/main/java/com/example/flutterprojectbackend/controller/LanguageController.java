@@ -27,9 +27,9 @@ public class LanguageController {
 		return ResponseEntity.ok(language);
 	}
 	
-	@PostMapping
-	public ResponseEntity<LanguageDto> saveLanguage(@RequestBody LanguageDto languageDto) {
-		LanguageDto savedLanguage = languageService.saveLanguage(languageDto);
-		return ResponseEntity.ok(savedLanguage);
-	}
+//	@PostMapping
+//	public ResponseEntity<LanguageDto> saveLanguage(@RequestBody LanguageDto languageDto) {
+//		LanguageDto savedLanguage = languageService.saveLanguage(languageDto);
+//		return ResponseEntity.ok(savedLanguage);
+//	}
 }
