@@ -12,5 +12,4 @@ public class CategoryDto {
 	private Integer resourceId;
 	private Integer languageId;
 	private String category;
-	private List<LocationInfoDto> locationInfos; // Related Location Info list
 }

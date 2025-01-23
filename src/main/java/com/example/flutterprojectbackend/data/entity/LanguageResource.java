@@ -31,9 +31,6 @@ public class LanguageResource {
 	@Column(name = "up_date")
 	private Instant upDate;
 	
-	@OneToMany(mappedBy = "resource", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<LocationInfo> locationInfos = new ArrayList<>();
-	
 	@PrePersist
 	public void prePersist() {
 		Instant now = Instant.now();

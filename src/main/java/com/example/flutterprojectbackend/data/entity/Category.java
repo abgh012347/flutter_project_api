@@ -19,10 +19,6 @@ public class Category {
 	private Integer id;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "resource_id", nullable = true)
-	private LanguageResource resource;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "language_id", nullable = true)
 	private Language language;
 	

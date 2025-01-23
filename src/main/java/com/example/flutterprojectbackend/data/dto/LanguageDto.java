@@ -10,5 +10,4 @@ import java.util.List;
 public class LanguageDto {
 	private Integer id;
 	private String language;
-	private List<LocationInfoDto> locationInfos; // Related Location Info list
 }

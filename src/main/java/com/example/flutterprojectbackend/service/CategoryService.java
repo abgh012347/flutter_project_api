@@ -24,12 +24,6 @@ public class CategoryService {
 				.collect(Collectors.toList());
 	}
 	
-	public CategoryDto saveCategory(CategoryDto categoryDto) {
-		Category category = convertToEntity(categoryDto);
-		Category savedCategory = categoryRepository.save(category);
-		return convertToDto(savedCategory);
-	}
-	
 	public CategoryDto getCategoryById(Integer id) {
 		Category category = categoryRepository.findById(id)
 				.orElseThrow(() -> new IllegalStateException("Category not found with id: " + id));
@@ -42,27 +36,12 @@ public class CategoryService {
 				.collect(Collectors.toList());
 	}
 	
-	public void deleteCategory(Integer id) {
-		if (!categoryRepository.existsById(id)) {
-			throw new IllegalStateException("Category not found with id: " + id);
-		}
-		categoryRepository.deleteById(id);
-	}
-	
 	private CategoryDto convertToDto(Category category) {
 		return CategoryDto.builder()
 				.id(category.getId())
-				.resourceId(category.getResource() != null ? category.getResource().getId() : null)
 				.languageId(category.getLanguage() != null ? category.getLanguage().getId() : null)
 				.category(category.getCategory())
 				.build();
 	}
 	
-	private Category convertToEntity(CategoryDto categoryDto) {
-		Category category = new Category();
-		category.setId(categoryDto.getId());
-		category.setCategory(categoryDto.getCategory());
-		category.setUpDate(Instant.now());
-		return category;
-	}
 }
